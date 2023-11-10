@@ -1,0 +1,91 @@
+A51 MACRO ASSEMBLER  MAIN                                                                 11/09/2023 21:37:22 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.02c
+OBJECT MODULE PLACED IN .\Objects\main.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE main.a51 SET(SMALL) DEBUG PRINT(.\Listings\main.lst) OBJECT(.\Objects\m
+                      ain.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0000H
+0000 020100            2     LJMP MAIN
+0023                   3     ORG 0023H
+0023 02012A            4     LJMP UART_INT
+0100                   5     ORG 0100H
+0100                   6     MAIN:   
+0100 C2E8              7         CLR 0XE8
+0102 758170            8         MOV SP,#70H
+0105 75A890            9         MOV IE,#90H
+0108 758920           10         MOV TMOD,#20H
+010B 758DFD           11         MOV TH1,#0FDH
+010E 758BFD           12         MOV TL1,#0FDH
+0111 758700           13         MOV PCON,#00H
+0114 759850           14         MOV SCON,#50H
+0117 D28E             15         SETB TR1
+0119 D2AC             16         SETB ES
+011B D2AF             17         SETB EA
+011D                  18     LED:
+011D C2B7             19         CLR P3.7
+011F 120136           20         LCALL DELAY500MS
+0122 D2B7             21         SETB P3.7
+0124 120136           22         LCALL DELAY500MS
+0127 02011D           23         LJMP LED
+                      24     
+012A                  25     UART_INT:
+012A 309806           26         JNB RI,K1
+012D E599             27         MOV A,SBUF
+                      28         ; XRL A,#0FFH
+012F F599             29         MOV SBUF,A
+0131 C298             30         CLR RI
+0133                  31     K1:    
+0133 C299             32         CLR TI
+0135 32               33         RETI
+                      34     
+0136                  35     DELAY500MS:   
+0136 7FCD             36         MOV R7,#0CDH
+0138                  37     DL1:
+0138 7E74             38         MOV R6,#74H
+013A                  39     DL0:
+013A 7D09             40         MOV R5,#09H
+013C DDFE             41         DJNZ R5,$
+013E DEFA             42         DJNZ R6,DL0
+0140 DFF6             43         DJNZ R7,DL1
+0142 22               44         RET
+                      45     
+                      46     END
+A51 MACRO ASSEMBLER  MAIN                                                                 11/09/2023 21:37:22 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+DELAY500MS . . . .  C ADDR   0136H   A   
+DL0. . . . . . . .  C ADDR   013AH   A   
+DL1. . . . . . . .  C ADDR   0138H   A   
+EA . . . . . . . .  B ADDR   00A8H.7 A   
+ES . . . . . . . .  B ADDR   00A8H.4 A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+K1 . . . . . . . .  C ADDR   0133H   A   
+LED. . . . . . . .  C ADDR   011DH   A   
+MAIN . . . . . . .  C ADDR   0100H   A   
+P3 . . . . . . . .  D ADDR   00B0H   A   
+PCON . . . . . . .  D ADDR   0087H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SP . . . . . . . .  D ADDR   0081H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TL1. . . . . . . .  D ADDR   008BH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+UART_INT . . . . .  C ADDR   012AH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

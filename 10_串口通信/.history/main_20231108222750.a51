@@ -1,0 +1,25 @@
+ORG 0000H
+
+CLR 0XE8
+MAIN:   
+    CLR P3.7
+    LCALL JMP DELAY500MS
+    SETB P3.7
+    LJMP DELAY500MS
+    AJMP MAIN
+
+
+
+
+DELAY500MS:   ;Îó²î 0us
+    MOV R7,#0CDH
+DL1:
+    MOV R6,#74H
+DL0:
+    MOV R5,#09H
+    DJNZ R5,$
+    DJNZ R6,DL0
+    DJNZ R7,DL1
+    RET
+
+END

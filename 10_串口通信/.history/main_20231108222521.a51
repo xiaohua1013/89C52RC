@@ -1,0 +1,20 @@
+ORG 0000H
+MAIN:   
+    CLR P3.7
+    AJMP DELAY500MS
+    SETB P3.7
+    AJMP MAIN
+
+
+
+
+DELAY500MS:   ;Îó²î 0us
+    MOV R7,#0CDH
+DL1:
+    MOV R6,#74H
+DL0:
+    MOV R5,#09H
+    DJNZ R5,$
+    DJNZ R6,DL0
+    DJNZ R7,DL1
+    RET

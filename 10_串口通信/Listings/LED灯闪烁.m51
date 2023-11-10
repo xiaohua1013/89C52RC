@@ -1,0 +1,90 @@
+BL51 BANKED LINKER/LOCATER V6.22                                                        11/09/2023  21:37:22  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\main.obj TO .\Objects\LEDµ∆…¡À∏ PRINT (.\Listings\LEDµ∆…¡À∏.m51) RAMSIZE (256)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\main.obj (MAIN)
+
+
+LINK MAP OF MODULE:  .\Objects\LEDµ∆…¡À∏ (MAIN)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0143H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\LEDµ∆…¡À∏ (MAIN)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        MAIN
+  C:0136H         SYMBOL        DELAY500MS
+  C:013AH         SYMBOL        DL0
+  C:0138H         SYMBOL        DL1
+  B:00A8H.7       SYMBOL        EA
+  B:00A8H.4       SYMBOL        ES
+  D:00A8H         SYMBOL        IE
+  C:0133H         SYMBOL        K1
+  C:011DH         SYMBOL        LED
+  C:0100H         SYMBOL        MAIN
+  D:00B0H         SYMBOL        P3
+  D:0087H         SYMBOL        PCON
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  D:0081H         SYMBOL        SP
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:008BH         SYMBOL        TL1
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:012AH         SYMBOL        UART_INT
+  C:0000H         LINE#         2
+  C:0023H         LINE#         4
+  C:0100H         LINE#         7
+  C:0102H         LINE#         8
+  C:0105H         LINE#         9
+  C:0108H         LINE#         10
+  C:010BH         LINE#         11
+  C:010EH         LINE#         12
+  C:0111H         LINE#         13
+BL51 BANKED LINKER/LOCATER V6.22                                                      11/09/2023  21:37:22  PAGE 2
+
+
+  C:0114H         LINE#         14
+  C:0117H         LINE#         15
+  C:0119H         LINE#         16
+  C:011BH         LINE#         17
+  C:011DH         LINE#         19
+  C:011FH         LINE#         20
+  C:0122H         LINE#         21
+  C:0124H         LINE#         22
+  C:0127H         LINE#         23
+  C:012AH         LINE#         26
+  C:012DH         LINE#         27
+  C:012FH         LINE#         29
+  C:0131H         LINE#         30
+  C:0133H         LINE#         32
+  C:0135H         LINE#         33
+  C:0136H         LINE#         36
+  C:0138H         LINE#         38
+  C:013AH         LINE#         40
+  C:013CH         LINE#         41
+  C:013EH         LINE#         42
+  C:0140H         LINE#         43
+  C:0142H         LINE#         44
+  -------         ENDMOD        MAIN
+
+Program Size: data=8.0 xdata=0 code=323
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
